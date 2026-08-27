@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resume Tailor — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Resume Tailor</h1>
+
+      <section>
+        <h2>Anthropic API key</h2>
+        <p class="hint">
+          Create one at
+          <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noreferrer"
+            >console.anthropic.com</a
+          >. This is billed separately from a Claude Pro/Max subscription — a subscription cannot be
+          used here. The key is stored in this browser's local extension storage and is sent only to
+          <code>api.anthropic.com</code>.
+        </p>
+        <div class="row">
+          <input id="api-key" type="password" placeholder="sk-ant-…" autocomplete="off" spellcheck="false" />
+          <button id="toggle-key" type="button" class="ghost">Show</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Model</h2>
+        <select id="model"></select>
+        <p class="hint" id="model-cost"></p>
+      </section>
+
+      <section>
+        <h2>Base resume</h2>
+        <p class="hint">
+          Paste your full resume as plain text. Claude converts it to structured data once — it
+          transcribes only and will not rewrite anything at this step. Tailoring later works from
+          this saved copy.
+        </p>
+        <div id="resume-state" class="state"></div>
+        <textarea id="resume-text" rows="14" placeholder="Paste your resume here…"></textarea>
+        <div class="row">
+          <button id="import" class="primary" type="button">Import resume</button>
+          <button id="clear" type="button" class="ghost">Clear saved resume</button>
+        </div>
+        <p id="import-status" class="status"></p>
+        <div id="warnings" class="warnings hidden">
+          <strong>Check these:</strong>
+          <ul id="warning-list"></ul>
+        </div>
+        <details id="resume-json-wrap" class="hidden">
+          <summary>Saved resume JSON</summary>
+          <p class="hint">Edit this directly if the import got something wrong, then save.</p>
+          <textarea id="resume-json" rows="18" spellcheck="false"></textarea>
+          <div class="row">
+            <button id="save-json" type="button">Save edits</button>
+          </div>
+          <p id="json-status" class="status"></p>
+        </details>
+      </section>
+
+      <p class="save-note" id="save-note"></p>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

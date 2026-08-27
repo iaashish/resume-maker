@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tailored resume</title>
+    <link rel="stylesheet" href="preview.css" />
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-info">
+        <strong id="who">Tailored resume</strong>
+        <span id="for" class="muted"></span>
+      </div>
+      <div class="toolbar-actions">
+        <button id="print" class="primary" type="button">Print / Save as PDF</button>
+        <button id="download" type="button">Download .html</button>
+      </div>
+    </div>
+    <p class="tip">
+      In the print dialog choose <strong>Save as PDF</strong>, set margins to <strong>Default</strong>,
+      and turn <strong>off</strong> headers and footers.
+    </p>
+    <div class="page">
+      <iframe id="frame" title="Resume preview"></iframe>
+    </div>
+    <p id="empty" class="empty hidden">No tailored resume yet. Run one from the side panel first.</p>
+    <script type="module" src="preview.js"></script>
+  </body>
+</html>

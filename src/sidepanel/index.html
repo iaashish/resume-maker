@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume Tailor</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Resume Tailor</h1>
+      <button id="open-options" class="link" type="button">Settings</button>
+    </header>
+
+    <div id="banner" class="banner hidden"></div>
+
+    <section class="step">
+      <div class="step-head">
+        <h2>1 · Job description</h2>
+        <span id="capture-meta" class="meta"></span>
+      </div>
+      <button id="capture" class="primary" type="button">Capture from this page</button>
+      <p class="hint">
+        Tip: select the description text first for the cleanest result. Otherwise the extension
+        looks for it automatically.
+      </p>
+      <textarea id="jd" rows="8" placeholder="…or paste the job description here"></textarea>
+    </section>
+
+    <section class="step">
+      <h2>2 · Notes <span class="optional">optional</span></h2>
+      <textarea
+        id="notes"
+        rows="3"
+        placeholder="e.g. Emphasise the payments work. Keep it to one page. Drop the retail job."
+      ></textarea>
+    </section>
+
+    <section class="step">
+      <button id="tailor" class="primary big" type="button">Tailor my resume</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section id="results" class="hidden">
+      <div class="result-head">
+        <h2 id="job-title">Result</h2>
+        <span id="usage" class="meta"></span>
+      </div>
+
+      <div class="score-row">
+        <div class="score"><span id="score-value">—</span><small>match</small></div>
+        <div class="score-bar"><div id="score-fill"></div></div>
+      </div>
+
+      <details open>
+        <summary>Gaps <span id="gaps-count" class="pill"></span></summary>
+        <p class="hint">
+          Requirements your resume does not evidence. These are deliberately left off the tailored
+          resume rather than invented.
+        </p>
+        <ul id="gaps" class="list gaps"></ul>
+      </details>
+
+      <details>
+        <summary>Strengths <span id="strengths-count" class="pill"></span></summary>
+        <ul id="strengths" class="list"></ul>
+      </details>
+
+      <details>
+        <summary>Changes made <span id="changes-count" class="pill"></span></summary>
+        <div id="changes"></div>
+      </details>
+
+      <div class="actions">
+        <button id="preview" class="primary" type="button">Preview &amp; print PDF</button>
+        <button id="copy-text" type="button">Copy as text</button>
+        <button id="copy-json" type="button">Copy JSON</button>
+      </div>
+    </section>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>

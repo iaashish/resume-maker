@@ -1,0 +1,24 @@
+{
+  "name": "resume-maker",
+  "version": "0.1.0",
+  "description": "Chrome extension that tailors your resume to a job description using Claude",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node test/smoke.mjs",
+    "check": "npm run typecheck && npm run build && npm run test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.121.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.2.7",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.62.1",
+    "typescript": "^7.0.2"
+  }
+}
